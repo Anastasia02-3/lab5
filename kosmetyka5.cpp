@@ -16,7 +16,7 @@ Kosmetyka::Kosmetyka(std::string n, std::string b, double t) {
 
 Kosmetyka::~Kosmetyka() {
     std::cout << "Destroy Kosmetyka\n";
-}
+}  // ---
 
 int Kosmetyka::setNazva(std::string n) { nazva = n; return 1; }
 int Kosmetyka::setBrend(std::string b) { brend = b; return 1; }
@@ -38,7 +38,7 @@ int Kosmetyka::pokazaty() {
 }
 
 int Kosmetyka::opysTovaru() {
-    std::cout << "[" << brend << "] " << nazva << " - " << tsina << " grn\n";
+    std::cout << "[" << brend << "] " << nazva << " " << tsina << " grn\n";
     return 1;
 }
 
@@ -48,7 +48,7 @@ Doglyad::Doglyad() {
 
 Doglyad::~Doglyad() {
     std::cout << "Destroy Doglyad\n";
-}
+}  // ---
 
 int Doglyad::setTypShkiry(std::string typ) {
     typShkiry = typ;
@@ -71,7 +71,7 @@ KremDlyaOblychchya::KremDlyaOblychchya(int s) {
 
 KremDlyaOblychchya::~KremDlyaOblychchya() {
     std::cout << "Destroy Krem\n";
-}
+}  // ---
 
 int KremDlyaOblychchya::setSPF(int s) {
     spf = s;
@@ -91,7 +91,7 @@ NichnyiKrem::NichnyiKrem(int s, std::string komponenty) {
 
 NichnyiKrem::~NichnyiKrem() {
     std::cout << "Destroy NichnyiKrem\n";
-}
+}  // ---
 
 int NichnyiKrem::pokazaty() {
     std::cout << "Sklad: " << aktyvniKomponenty << "\n";
@@ -104,7 +104,7 @@ Pomada::Pomada() {
 
 Pomada::~Pomada() {
     std::cout << "Destroy Pomada\n";
-}
+}  // ---
 
 int Pomada::setKolir(std::string k) {
     kolir = k;
@@ -130,7 +130,7 @@ Makiyazh::Makiyazh() {
 
 Makiyazh::~Makiyazh() {
     std::cout << "Destroy Makiyazh\n";
-}
+}  // ---
 
 int Makiyazh::pokazaty() {
     std::cout << "Makiyazh\n";
@@ -139,13 +139,11 @@ int Makiyazh::pokazaty() {
 
 int UniversalProdukt::pokazaty() {
     std::cout << "Universal produkt:\n";
-
     Doglyad::pokazaty();
     Pomada::pokazaty();
     Makiyazh::pokazaty();
-
     return 1;
-} 
+}
 
 UniversalProdukt::UniversalProdukt() {
     std::cout << "Create UniversalProdukt\n";
@@ -153,4 +151,34 @@ UniversalProdukt::UniversalProdukt() {
 
 UniversalProdukt::~UniversalProdukt() {
     std::cout << "Destroy UniversalProdukt\n";
+}  // ---
+
+RombA::RombA() {
+    std::cout << "Create RombA\n";
+}
+
+RombA::~RombA() {
+    std::cout << "Destroy RombA\n";
+}  // ---
+
+RombB::RombB() {
+    std::cout << "Create RombB\n";
+}
+
+RombB::~RombB() {
+    std::cout << "Destroy RombB\n";
+}  // ---
+
+RombTest::RombTest() {
+    std::cout << "Create RombTest\n";
+}
+
+RombTest::~RombTest() {
+    std::cout << "Destroy RombTest\n";
+}  // ---
+
+void RombTest::test() {
+    std::cout << "Romb test:\n";
+    RombA::opysTovaru();
+    RombB::opysTovaru();
 }

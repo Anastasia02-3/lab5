@@ -2,7 +2,7 @@
 
 int main() {
 
-    std::cout << " BASIC TEST \n";
+    std::cout << "BASIC TEST\n";
     Doglyad t1;
 
     std::cout << "\n";
@@ -31,11 +31,20 @@ int main() {
     obj->pokazaty();
     delete obj;
 
-    std::cout << "\n MULTIPLE INHERITANCE \n";
+    std::cout << "\nMULTIPLE INHERITANCE\n";
 
     UniversalProdukt u;
 
     std::cout << "Object created\n";
+
+    std::cout << "\nROMB PROBLEM\n";
+
+    RombTest r;
+
+    r.RombA::setNazva("Product A");
+    r.RombB::setNazva("Product B");
+
+    r.test();
 
     return 0;
 }

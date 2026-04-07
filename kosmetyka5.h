@@ -27,6 +27,7 @@ public:
 protected:
     int opysTovaru();
 };
+
 class Doglyad : virtual public Kosmetyka {
 private:
     std::string typShkiry;
@@ -62,6 +63,7 @@ public:
 
     int pokazaty() override;
 };
+
 class Pomada : virtual public Kosmetyka {
 private:
     std::string kolir;
@@ -84,12 +86,32 @@ public:
 
     int pokazaty() override;
 };
+
 class UniversalProdukt : public Doglyad, public Pomada, public Makiyazh {
 public:
     UniversalProdukt();
-    ~UniversalProdukt();
+    virtual ~UniversalProdukt();
 
-    int pokazaty() override; 
+    int pokazaty() override;
+};
+
+class RombA : virtual public Kosmetyka {
+public:
+    RombA();
+    virtual ~RombA();
+};
+
+class RombB : virtual public Kosmetyka {
+public:
+    RombB();
+    virtual ~RombB();
+};
+
+class RombTest : public RombA, public RombB {
+public:
+    RombTest();
+    virtual ~RombTest();
+    void test();
 };
 
 #endif
